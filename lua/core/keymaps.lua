@@ -25,9 +25,26 @@ vim.keymap.set("n", "<esc>", ":nohl<cr>", { desc = "Cancel search", silent = tru
 
 vim.keymap.set("n", "<leader>qq", "<cmd>wqa<cr>", { desc = "Save all and quit" })
 
+vim.api.nvim_create_autocmd("LspAttach", {
+    group = vim.api.nvim_create_augroup("UserLspConfig", { clear = true }),
+    callback = function(event)
+        local clients = vim.lsp.get_clients({ bufnr = event.buf })
 
-vim.api.nvim_create_autocmd("TextYankPost", {
-    desc = "Highlight when yanking text",
-    group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-    callback = function() vim.highlight.on_yank() end
+        vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, {
+            buffer = event.buf,
+            desc = "Signature Help",
+        })
+
+        for _, client in ipairs(clients) do
+            if client:supports_method("textDocument/formatting", event.buf) then
+                vim.keymap.set('n', '<leader>cff', vim.lsp.buf.format, {
+                    buffer = event.buf,
+                    desc = "Format code",
+                })
+
+                break
+            end
+        end
+    end,
 })
+

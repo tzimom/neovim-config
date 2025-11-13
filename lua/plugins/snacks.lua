@@ -6,6 +6,7 @@ return {
 
         keys = {
             { "<leader>ff", function() require("snacks").picker.files() end, desc = "Find file" },
+            { "<leader>fg", function() require("snacks").picker.git_files() end, desc = "Find git file" },
             { "<leader>fe", function() require("snacks").explorer() end, desc = "Snacks file explorer" },
 
             { "<leader>cgg", function() require("snacks").lazygit() end, desc = "Lazy git" },
