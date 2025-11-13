@@ -35,6 +35,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
             desc = "Signature Help",
         })
 
+        vim.keymap.set("n", "<leader>cl", "<cmd>LspInfo<cr>", {
+            buffer = event.buf,
+            desc = "Lsp Info",
+        })
+
         for _, client in ipairs(clients) do
             if client:supports_method("textDocument/formatting", event.buf) then
                 vim.keymap.set('n', '<leader>cff', vim.lsp.buf.format, {

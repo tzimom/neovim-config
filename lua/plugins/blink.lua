@@ -2,7 +2,7 @@ return {
     "saghen/blink.cmp", version = "1.*",
 
     event = "VeryLazy",
-    dependencies = { "rafamadriz/friendly-snippets" },
+    dependencies = { "L3MON4D3/LuaSnip", "rafamadriz/friendly-snippets" },
 
     opts = {
         keymap = { preset = "default" },
