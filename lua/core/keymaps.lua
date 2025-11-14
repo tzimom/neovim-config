@@ -25,31 +25,5 @@ vim.keymap.set("n", "<esc>", ":nohl<cr>", { desc = "Cancel search", silent = tru
 
 vim.keymap.set("n", "<leader>qq", "<cmd>wqa<cr>", { desc = "Save all and quit" })
 
-vim.api.nvim_create_autocmd("LspAttach", {
-    group = vim.api.nvim_create_augroup("UserLspConfig", { clear = true }),
-    callback = function(event)
-        local clients = vim.lsp.get_clients({ bufnr = event.buf })
 
-        vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, {
-            buffer = event.buf,
-            desc = "Signature Help",
-        })
-
-        vim.keymap.set("n", "<leader>cl", "<cmd>LspInfo<cr>", {
-            buffer = event.buf,
-            desc = "Lsp Info",
-        })
-
-        for _, client in ipairs(clients) do
-            if client:supports_method("textDocument/formatting", event.buf) then
-                vim.keymap.set('n', '<leader>cff', vim.lsp.buf.format, {
-                    buffer = event.buf,
-                    desc = "Format code",
-                })
-
-                break
-            end
-        end
-    end,
-})
-
+vim.keymap.set({ "n", "x" }, "grf", vim.lsp.buf.format, { desc = "Format Code" })

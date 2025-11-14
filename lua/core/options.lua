@@ -27,22 +27,29 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 vim.opt.termguicolors = true
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 18
 vim.opt.signcolumn = "yes"
 
 vim.opt.isfname:append("@-@")
-vim.opt.updatetime = 50
+vim.opt.updatetime = 100
 vim.opt.colorcolumn = "100"
 
-
-vim.diagnostic.config({
-    virtual_text = false,
-    virtual_lines = true,
-})
-
+vim.diagnostic.config({ virtual_text = true, float = true })
 
 vim.api.nvim_create_autocmd("TextYankPost", {
-    desc = "Highlight when yanking text",
-    group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-    callback = function() vim.highlight.on_yank() end
+	desc = "Highlight when yanking text",
+	group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
+	callback = function()
+		vim.highlight.on_yank()
+	end,
+})
+
+vim.api.nvim_create_autocmd("CursorHold", {
+    desc = "Open floating window when resting",
+    group = vim.api.nvim_create_augroup("auto-float", { clear = true }),
+    callback = function()
+        if not vim.diagnostic.is_enabled() then return end
+
+        vim.diagnostic.open_float({ scope = "cursor" })
+    end,
 })
