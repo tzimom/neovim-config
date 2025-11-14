@@ -1,23 +1,27 @@
 return {
-    "saghen/blink.cmp", version = "1.*",
+	{
+		"saghen/blink.cmp",
+		version = "1.*",
 
-    event = "VeryLazy",
-    dependencies = { "L3MON4D3/LuaSnip", "rafamadriz/friendly-snippets" },
+		event = "VeryLazy",
+		dependencies = { "LuaSnip", "rafamadriz/friendly-snippets" },
 
-    opts = {
-        keymap = { preset = "default" },
-        completion = { documentation = { auto_show = false } },
+		opts = {
+			keymap = { preset = "default" },
+			completion = { documentation = { auto_show = false } },
 
-        sources = {
-            default = { "lazydev", "lsp", "snippets", "path", "buffer" },
-            providers = {
-                lazydev = {
-                    name = "LazyDev",
-                    module = "lazydev.integrations.blink",
-                },
-            },
-        },
+			sources = {
+				default = { "lazydev", "lsp", "snippets", "path", "buffer" },
+				providers = {
+					lazydev = {
+						name = "LazyDev",
+						module = "lazydev.integrations.blink",
+					},
+				},
+			},
 
-        fuzzy = { implementation = "prefer_rust_with_warning" },
-    },
+			fuzzy = { implementation = "prefer_rust_with_warning" },
+		},
+	},
+	{ "L3MON4D3/LuaSnip", build = "make install_jsregexp" },
 }

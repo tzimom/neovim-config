@@ -3,4 +3,4 @@ require("core.keymaps")
 
 require("core.lazy")
 
-vim.cmd("colorscheme kanagawa-wave")
+vim.cmd("colorscheme tairiki-dimmed")

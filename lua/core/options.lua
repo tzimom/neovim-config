@@ -34,7 +34,10 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 100
 vim.opt.colorcolumn = "100"
 
-vim.diagnostic.config({ virtual_text = true, float = true })
+vim.diagnostic.config({
+    virtual_text = true,
+    float = { source = true, focusable = false, border = "rounded" },
+})
 
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking text",

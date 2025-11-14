@@ -1,3 +1,4 @@
 return {
-    { "rebelot/kanagawa.nvim", lazy = false },
+	{ "deparr/tairiki.nvim", lazy = false },
+	{ "rebelot/kanagawa.nvim", lazy = false },
 }
