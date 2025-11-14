@@ -27,13 +27,6 @@ return {
             pane_gap = 10,
             sections = {
                 { section = "header" },
-                -- {
-                -- 	pane = 2,
-                -- 	section = "terminal",
-                -- 	cmd = "colorscript -e square",
-                -- 	height = 5,
-                -- 	padding = 1,
-                -- },
                 { section = "keys", gap = 1, padding = 1 },
                 {
                 	pane = 2,
@@ -108,8 +101,8 @@ return {
 		indent = {
 			enabled = true,
 			char = "│",
-			only_scope = false,
-			only_current = false,
+			only_scope = true,
+			only_current = true,
 			hl = "SnacksIndent",
 		},
 		input = { enabled = false },
