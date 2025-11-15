@@ -91,6 +91,7 @@ return {
                     { mode = "n", keys = "<leader>b", desc = "+Buffer" },
                     { mode = "n", keys = "<leader>s", desc = "+Search" },
                     { mode = "n", keys = "<leader>g", desc = "+Git" },
+                    { mode = "n", keys = "<leader>u", desc = "+UI" },
 
                     { mode = "n", keys = "<leader>c", desc = "+Code" },
                     { mode = "n", keys = "<leader>cf", desc = "+Format" },
