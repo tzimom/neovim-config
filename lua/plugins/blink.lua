@@ -10,6 +10,8 @@ return {
 			keymap = { preset = "default" },
 			completion = { documentation = { auto_show = false } },
 
+            snippets = { preset = "luasnip" },
+
 			sources = {
 				default = { "lazydev", "lsp", "snippets", "path", "buffer" },
 				providers = {
