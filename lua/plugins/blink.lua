@@ -23,5 +23,5 @@ return {
 			fuzzy = { implementation = "prefer_rust_with_warning" },
 		},
 	},
-	{ "L3MON4D3/LuaSnip", build = "make install_jsregexp" },
+	{ "L3MON4D3/LuaSnip", version = "v2.*", build = "make install_jsregexp" },
 }
