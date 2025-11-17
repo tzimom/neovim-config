@@ -40,6 +40,8 @@ return {
                 },
                 function()
                 	local in_git = require("snacks").git.get_root() ~= nil
+                    local in_git_with_remote = vim.fn.system("git remote"):gsub("\n", ""):gsub("\r", "") ~= ""
+
                 	local cmds = {
                 		{
                 			title = "Notifications",
@@ -61,6 +63,7 @@ return {
                 			end,
                 			icon = " ",
                 			height = 7,
+                            enabled = in_git_with_remote,
                 		},
                 		{
                 			icon = " ",
@@ -71,19 +74,20 @@ return {
                 				vim.fn.jobstart("gh pr list --web", { detach = true })
                 			end,
                 			height = 7,
+                            enabled = in_git_with_remote,
                 		},
                 		{
                 			icon = " ",
                 			title = "Git Status",
                 			cmd = "git --no-pager diff --stat -B -M -C",
                 			height = 10,
+                            enabled = in_git,
                 		},
                 	}
                 	return vim.tbl_map(function(cmd)
                 		return vim.tbl_extend("force", {
                 			pane = 2,
                 			section = "terminal",
-                			enabled = in_git,
                 			padding = 1,
                 			ttl = 5 * 60,
                 			indent = 3,
