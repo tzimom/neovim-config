@@ -38,7 +38,8 @@ vim.keymap.set("n", "<esc>", ":nohl<cr>", { desc = "Cancel search", silent = tru
 
 
 -- Quit neovim
-vim.keymap.set("n", "<leader>qq", "<cmd>wqa<cr>", { desc = "Save all and quit", noremap = true })
+vim.keymap.set("n", "<leader>qw", "<cmd>wqa<cr>", { desc = "Save all and quit", noremap = true })
+vim.keymap.set("n", "<leader>qq", "<cmd>qa!<cr>", { desc = "Force and quit", noremap = true })
 
 
 -- Format code

@@ -16,6 +16,8 @@ return {
         { "<leader>sg", function() require("snacks").picker.grep() end, desc = "Grep" },
         { "<leader>sg", function() require("snacks").picker.grep_word() end, desc = "Grep selection", mode = "x" },
         { "<leader>sk", function() require("snacks").picker.keymaps() end, desc = "Search keymaps" },
+
+        { "<leader>ct", function() require("snacks").terminal() end, desc = "Open terminal" },
     },
 
     opts = {
