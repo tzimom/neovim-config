@@ -14,6 +14,6 @@ return {
 		event = "VeryLazy",
 		dependencies = { "neovim/nvim-lspconfig" },
 
-		opts = {},
+        opts = {},
 	},
 }

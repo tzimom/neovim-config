@@ -2,6 +2,7 @@ return {
     "folke/snacks.nvim",
 
     lazy = false,
+    priority = 1000,
 
     keys = {
         { "<leader>bd", function() require("snacks").bufdelete() end, desc = "Delete current buffer" },
@@ -22,7 +23,7 @@ return {
 
     opts = {
         animate = { enabled = false },
-        bigfile = { enabled = false },
+        bigfile = { enabled = true },
         bufdelete = { enabled = true },
         dashboard = {
             enabled = true,
@@ -115,8 +116,8 @@ return {
 		keymap = { enabled = false },
 		layout = { enabled = false },
 		lazygit = { enabled = true },
-		notifier = { enabled = false },
-		notify = { enabled = false },
+		notifier = { enabled = true },
+		notify = { enabled = true },
 		picker = { enabled = true },
 		profiler = { enabled = false },
 		quickfile = { enabled = true },

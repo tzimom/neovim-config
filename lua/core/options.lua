@@ -33,7 +33,7 @@ vim.opt.scrolloff = 18
 vim.opt.signcolumn = "yes"
 
 vim.opt.isfname:append("@-@")
-vim.opt.updatetime = 100
+vim.opt.updatetime = 150
 vim.opt.colorcolumn = "100"
 
 vim.diagnostic.config({
@@ -41,17 +41,9 @@ vim.diagnostic.config({
     float = { source = true, focusable = false, border = "rounded" },
 })
 
-vim.api.nvim_create_autocmd("TextYankPost", {
-	desc = "Highlight when yanking text",
-	group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
-	callback = function()
-		vim.highlight.on_yank()
-	end,
-})
-
 vim.api.nvim_create_autocmd("CursorHold", {
     desc = "Open floating window when resting",
-    group = vim.api.nvim_create_augroup("auto-float", { clear = true }),
+    group = vim.api.nvim_create_augroup("AutoFloat", { clear = true }),
     callback = function()
         if not vim.diagnostic.is_enabled() then return end
 
