@@ -4,7 +4,7 @@ return {
 		version = "1.*",
 
 		event = "VeryLazy",
-		dependencies = { "LuaSnip", "rafamadriz/friendly-snippets" },
+		dependencies = { "fang2hou/blink-copilot", "LuaSnip", "rafamadriz/friendly-snippets" },
 
 		opts = {
 			keymap = { preset = "default" },
@@ -13,12 +13,17 @@ return {
             snippets = { preset = "luasnip" },
 
 			sources = {
-				default = { "lazydev", "lsp", "snippets", "path", "buffer" },
+				default = { "lazydev", "lsp", "copilot", "snippets", "path", "buffer" },
 				providers = {
 					lazydev = {
-						name = "LazyDev",
+						name = "lazydev",
 						module = "lazydev.integrations.blink",
 					},
+                    copilot = {
+                        name = "copilot",
+                        module = "blink-copilot",
+                        async = true,
+                    },
 				},
 			},
 
