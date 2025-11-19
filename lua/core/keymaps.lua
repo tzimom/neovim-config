@@ -43,8 +43,8 @@ vim.keymap.set("n", "<leader>qq", "<cmd>qa!<cr>", { desc = "Force and quit", nor
 
 
 -- Format code
-vim.keymap.set({ "n", "x" }, "grf", vim.lsp.buf.format, { desc = "Format Code" })
+vim.keymap.set({ "n", "x" }, "grf", vim.lsp.buf.format, { desc = "Format Code", noremap = true })
 
 
 -- UI settings
-vim.keymap.set("n", "<leader>uw", "<cmd>set wrap!<cr>", { desc = "Toggle line wrap" })
+vim.keymap.set("n", "<leader>uw", "<cmd>set wrap!<cr>", { desc = "Toggle line wrap", noremap = true })
