@@ -104,8 +104,8 @@ return {
 		debug = { enabled = false },
 		dim = { enabled = false },
 		explorer = { enabled = false },
-		gh = { enabled = false }, -- TODO: Find out what this does.
-		git = { enabled = false }, -- TODO: Same thing here.
+		gh = { enabled = false },
+		git = { enabled = false },
 		gitbrowse = { enabled = false },
 		image = { enabled = false },
 		indent = {
@@ -129,7 +129,7 @@ return {
 		scratch = { enabled = false },
 		scroll = { enabled = false },
 		statuscolumn = { enabled = false },
-		terminal = { enabled = true }, -- TODO: Check out config.
+		terminal = { enabled = true },
 		toggle = { enabled = false },
 		util = { enabled = false },
 		win = { enabled = false },
