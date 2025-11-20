@@ -19,6 +19,9 @@ return {
         { "<leader>sk", function() require("snacks").picker.keymaps() end, desc = "Search keymaps" },
 
         { "<leader>ct", function() require("snacks").terminal() end, desc = "Open terminal" },
+
+        { "<leader>ns", function() require("snacks").notifier.show_history() end, desc = "Show notifications" },
+        { "<leader>nh", function() require("snacks").notifier.hide() end, desc = "Hide notifications" },
     },
 
     opts = {

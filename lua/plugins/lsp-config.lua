@@ -2,7 +2,7 @@ return {
     "neovim/nvim-lspconfig",
 
     config = function()
-        vim.lsp.config["pylsp"] = {
+        vim.lsp.config("pylsp", {
             settings = {
                 pylsp = {
                     plugins = {
@@ -11,6 +11,8 @@ return {
                     },
                 },
             },
-        }
+        })
+
+        vim.lsp.enable("sourcekit")
     end,
 }
