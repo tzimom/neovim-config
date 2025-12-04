@@ -41,12 +41,11 @@ vim.diagnostic.config({
     float = { source = true, focusable = false, border = "rounded" },
 })
 
-vim.api.nvim_create_autocmd("CursorHold", {
-    desc = "Open floating window when resting",
-    group = vim.api.nvim_create_augroup("AutoFloat", { clear = true }),
-    callback = function()
-        if not vim.diagnostic.is_enabled() then return end
-
-        vim.diagnostic.open_float({ scope = "cursor" })
-    end,
-})
+-- vim.api.nvim_create_autocmd("CursorHold", {
+--     desc = "Open floating window when resting",
+--     group = vim.api.nvim_create_augroup("AutoFloat", { clear = true }),
+--     callback = function()
+--         if not vim.diagnostic.is_enabled() then return end
+--         vim.diagnostic.open_float({ scope = "cursor" })
+--     end,
+-- })
