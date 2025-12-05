@@ -44,7 +44,7 @@ return {
                 },
                 function()
                 	local in_git = require("snacks").git.get_root() ~= nil
-                    local in_git_with_remote = vim.fn.system("git remote"):gsub("\n", ""):gsub("\r", "") ~= ""
+                    local in_git_with_remote = in_git and vim.fn.system("git remote"):gsub("\n", ""):gsub("\r", "") ~= ""
 
                 	local cmds = {
                 		{
@@ -53,7 +53,7 @@ return {
                 			action = function()
                 				vim.ui.open("https://github.com/notifications")
                 			end,
-                			key = "n",
+                			key = "m",
                 			icon = " ",
                 			height = 5,
                 			enabled = true,
