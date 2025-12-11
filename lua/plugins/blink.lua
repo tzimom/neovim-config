@@ -8,12 +8,12 @@ return {
 
 		opts = {
 			keymap = { preset = "default" },
-			completion = { documentation = { auto_show = false } },
-
             snippets = { preset = "luasnip" },
 
+			completion = { documentation = { auto_show = false } },
+
 			sources = {
-				default = { "lazydev", "lsp", "copilot", "snippets", "path", "buffer" },
+				default = { "lazydev", "lsp", "snippets", "copilot", "path", "buffer" },
 				providers = {
 					lazydev = {
 						name = "lazydev",
@@ -30,5 +30,4 @@ return {
 			fuzzy = { implementation = "prefer_rust_with_warning" },
 		},
 	},
-	{ "L3MON4D3/LuaSnip", version = "v2.*", build = "make install_jsregexp" },
 }
