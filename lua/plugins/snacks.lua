@@ -121,7 +121,17 @@ return {
 		lazygit = { enabled = true },
 		notifier = { enabled = true },
 		notify = { enabled = true },
-		picker = { enabled = true },
+		picker = {
+            enabled = true,
+            win = {
+                input = {
+                    keys = {
+                        ["<a-h>"] = nil, -- conflicts with aerospace
+                        ["<a-t>"] = { "toggle_hidden", mode = { "i", "n" } },
+                    },
+                },
+            },
+        },
 		profiler = { enabled = false },
 		quickfile = { enabled = true },
 		rename = { enabled = false },
