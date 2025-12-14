@@ -35,69 +35,37 @@ return {
                 { section = "header" },
                 { section = "keys", gap = 1, padding = 1 },
                 {
-                	pane = 2,
-                	icon = " ",
                 	desc = "Browse Repo",
-                	padding = 1,
-                	key = "b",
+                	icon = "",
                 	action = function() require("snacks").gitbrowse() end,
+                	key = "b",
+                	pane = 2,
+                	padding = 1,
                 },
-                function()
-                	local in_git = require("snacks").git.get_root() ~= nil
-                    local in_git_with_remote = in_git and vim.fn.system("git remote"):gsub("\n", ""):gsub("\r", "") ~= ""
-
-                	local cmds = {
-                		{
-                			title = "Notifications",
-                			cmd = "gh notify -s -a -n5",
-                			action = function()
-                				vim.ui.open("https://github.com/notifications")
-                			end,
-                			key = "m",
-                			icon = " ",
-                			height = 5,
-                			enabled = true,
-                		},
-                		{
-                			title = "Open Issues",
-                			cmd = "gh issue list -L 3",
-                			key = "i",
-                			action = function()
-                				vim.fn.jobstart("gh issue list --web", { detach = true })
-                			end,
-                			icon = " ",
-                			height = 7,
-                            enabled = in_git_with_remote,
-                		},
-                		{
-                			icon = " ",
-                			title = "Open PRs",
-                			cmd = "gh pr list -L 3",
-                			key = "P",
-                			action = function()
-                				vim.fn.jobstart("gh pr list --web", { detach = true })
-                			end,
-                			height = 7,
-                            enabled = in_git_with_remote,
-                		},
-                		{
-                			icon = " ",
-                			title = "Git Status",
-                			cmd = "git --no-pager diff --stat -B -M -C",
-                			height = 10,
-                            enabled = in_git,
-                		},
-                	}
-                	return vim.tbl_map(function(cmd)
-                		return vim.tbl_extend("force", {
-                			pane = 2,
-                			section = "terminal",
-                			padding = 1,
-                			ttl = 5 * 60,
-                			indent = 3,
-                		}, cmd)
-                	end, cmds)
-                end,
+                {
+                    section = "terminal",
+                    title = "Notifications",
+                    icon = "",
+                    cmd = "gh notify -s -a -n 5",
+                    action = function() vim.ui.open("https://github.com/notifications") end,
+                    pane = 2,
+                    height = 5,
+                    padding = 1,
+                    indent = 2,
+                    ttl = 5 * 60,
+                },
+                {
+                    section = "terminal",
+                    title = "Git Status",
+                    icon = "",
+                    cmd = "git --no-pager diff --stat -B -M -C",
+                    condition = function() return require("snacks").git.get_root() ~= nil end,
+                    pane = 2,
+                    height = 10,
+                    padding = 1,
+                    indent = 1,
+                    ttl = 2 * 60,
+                },
                 { section = "startup" },
 			},
 		},

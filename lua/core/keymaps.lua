@@ -44,7 +44,7 @@ vim.keymap.set("n", "<leader>qf", "<cmd>qa!<cr>", { desc = "Force Quit", noremap
 
 
 -- Format code
-vim.keymap.set({ "n", "x" }, "grf", vim.lsp.buf.format, { desc = "Format Code", noremap = true })
+vim.keymap.set({ "n", "x" }, "grff", vim.lsp.buf.format, { desc = "Format Code", noremap = true })
 
 
 -- UI settings
