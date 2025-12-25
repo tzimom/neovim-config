@@ -33,11 +33,6 @@ return {
         }
     },
     {
-        "nvim-mini/mini.animate", version = false,
-        event = "VeryLazy",
-        opts = {},
-    },
-    {
         "nvim-mini/mini.clue", version = false,
         event = "VeryLazy",
         config = function()
