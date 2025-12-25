@@ -1,16 +1,16 @@
 return {
     {
-        "echasnovski/mini.comment", version = false,
+        "nvim-mini/mini.comment", version = false,
         event = "VeryLazy",
         opts = {},
     },
     {
-        "echasnovski/mini.pairs", version = false,
+        "nvim-mini/mini.pairs", version = false,
         event = "VeryLazy",
         opts = {},
     },
     {
-        "echasnovski/mini.surround", version = false,
+        "nvim-mini/mini.surround", version = false,
         event = "VeryLazy",
         opts = {
             mappings = {
@@ -24,7 +24,7 @@ return {
         },
     },
     {
-        "echasnovski/mini.trailspace", version = false,
+        "nvim-mini/mini.trailspace", version = false,
         event = "VeryLazy",
         opts = { only_in_normal_buffers = true },
         keys = {
@@ -33,7 +33,12 @@ return {
         }
     },
     {
-        "echasnovski/mini.clue", version = false,
+        "nvim-mini/mini.animate", version = false,
+        event = "VeryLazy",
+        opts = {},
+    },
+    {
+        "nvim-mini/mini.clue", version = false,
         event = "VeryLazy",
         config = function()
             local miniclue = require("mini.clue")
