@@ -41,6 +41,7 @@ return {
                 	key = "b",
                 	pane = 2,
                 	padding = 1,
+                    enabled = function() return require("snacks").git.get_root() ~= nil end,
                 },
                 {
                     section = "terminal",
@@ -53,6 +54,7 @@ return {
                     padding = 1,
                     indent = 2,
                     ttl = 5 * 60,
+                    enabled = function() return require("snacks").git.get_root() ~= nil end,
                 },
                 {
                     section = "terminal",
@@ -65,6 +67,7 @@ return {
                     padding = 1,
                     indent = 1,
                     ttl = 2 * 60,
+                    enabled = function() return require("snacks").git.get_root() ~= nil end,
                 },
                 { section = "startup" },
 			},
