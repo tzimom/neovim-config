@@ -3,4 +3,4 @@ require("core.keymaps")
 
 require("core.lazy")
 
-vim.cmd("colorscheme catppuccin-macchiato")
+vim.cmd("colorscheme catppuccin-mocha")
