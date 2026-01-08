@@ -40,11 +40,12 @@ vim.keymap.set("n", "<esc>", ":nohl<cr>", { desc = "Cancel search", silent = tru
 -- Quit neovim
 vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit", noremap = true })
 vim.keymap.set("n", "<leader>qw", "<cmd>wqa<cr>", { desc = "Save all and quit", noremap = true })
-vim.keymap.set("n", "<leader>qf", "<cmd>qa!<cr>", { desc = "Force Quit", noremap = true })
+vim.keymap.set("n", "<leader>qf", "<cmd>qa!<cr>", { desc = "Force quit", noremap = true })
 
 
--- Format code
-vim.keymap.set({ "n", "x" }, "grff", vim.lsp.buf.format, { desc = "Format Code", noremap = true })
+-- Code
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition", noremap = true })
+vim.keymap.set({ "n", "x" }, "grff", vim.lsp.buf.format, { desc = "Format code", noremap = true })
 
 
 -- UI settings
