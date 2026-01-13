@@ -5,6 +5,12 @@ return {
     priority = 1000,
 
     keys = {
+        { "gd", function() require("snacks").picker.lsp_definitions() end, desc = "Goto definition" },
+        { "gD", function() require("snacks").picker.lsp_declarations() end, desc = "Goto declaration" },
+        { "grr", function() require("snacks").picker.lsp_references() end, nowait = true, desc = "References" },
+        { "gri", function() require("snacks").picker.lsp_implementations() end, desc = "Goto Implementation" },
+        { "grt", function() require("snacks").picker.lsp_type_definitions() end, desc = "Goto Type Definition" },
+
         { "<leader>bd", function() require("snacks").bufdelete() end, desc = "Delete current buffer" },
 
         { "<leader>gg", function() require("snacks").lazygit() end, desc = "Lazy git" },
