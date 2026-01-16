@@ -2,7 +2,7 @@ return {
     "stevearc/oil.nvim",
 
     event = "VeryLazy",
-    keys = { { "<leader>/", function() require("oil").toggle_float() end, desc = "Toggle oil" } },
+    keys = { { "<leader>o", function() require("oil").toggle_float() end, desc = "Toggle oil" } },
 
     opts = {
         default_file_explorer = true,
