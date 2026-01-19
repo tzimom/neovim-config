@@ -31,6 +31,7 @@ vim.opt.smartcase = true
 vim.opt.termguicolors = true
 vim.opt.scrolloff = 18
 vim.opt.signcolumn = "yes"
+vim.opt.foldcolumn = "1"
 
 vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 150
