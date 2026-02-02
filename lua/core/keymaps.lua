@@ -8,8 +8,8 @@ vim.keymap.set({ "n", "x" }, "L", "$", { desc = "Move cursor to end of line", no
 
 
 -- Move lines
-vim.keymap.set("v", "J", "<cmd>m '>+1<cr>gv=gv", { desc = "Move lines down", noremap = true })
-vim.keymap.set("v", "K", "<cmd>m '<-2<cr>gv=gv", { desc = "Move lines up", noremap = true })
+vim.keymap.set("v", "J", ":m '>+1<cr>gv=gv", { desc = "Move lines down", noremap = true })
+vim.keymap.set("v", "K", ":m '<-2<cr>gv=gv", { desc = "Move lines up", noremap = true })
 
 
 -- Window navigation with HJKL
