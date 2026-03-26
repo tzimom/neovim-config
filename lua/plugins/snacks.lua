@@ -99,7 +99,7 @@ return {
 		layout = { enabled = false },
 		lazygit = { enabled = true },
 		notifier = { enabled = true },
-		notify = { enabled = true },
+		notify = { enabled = false },
 		picker = {
             enabled = true,
             win = {
