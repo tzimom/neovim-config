@@ -32,6 +32,7 @@ vim.opt.termguicolors = true
 vim.opt.scrolloff = 18
 vim.opt.signcolumn = "yes"
 vim.opt.foldcolumn = "1"
+vim.opt.foldmethod = "marker"
 
 vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 150
