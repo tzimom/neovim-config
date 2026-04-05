@@ -1,7 +1,13 @@
 return {
-    "neovim/nvim-lspconfig",
+    "neovim/nvim-lspconfig", version = "*",
 
     config = function()
+        vim.diagnostic.config({
+            virtual_text = true,
+            signs = true,
+            float = { border = "rounded" },
+        })
+
         vim.lsp.config("pylsp", {
             settings = {
                 pylsp = {
