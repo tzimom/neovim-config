@@ -35,13 +35,8 @@ vim.opt.foldcolumn = "1"
 vim.opt.foldmethod = "marker"
 
 vim.opt.isfname:append("@-@")
-vim.opt.updatetime = 150
+vim.opt.updatetime = 50
 vim.opt.colorcolumn = "100"
-
-vim.diagnostic.config({
-    virtual_text = true,
-    float = { source = true, focusable = false, border = "rounded" },
-})
 
 -- vim.api.nvim_create_autocmd("CursorHold", {
 --     desc = "Open floating window when resting",

@@ -3,5 +3,11 @@ return {
 	-- { "rebelot/kanagawa.nvim", lazy = false },
 	-- { "wincent/base16-nvim", lazy = false },
 
-    { "catppuccin/nvim", lazy = false },
+    {
+        "catppuccin/nvim", lazy = false,
+
+        config = function()
+            vim.cmd("colorscheme catppuccin")
+        end,
+    },
 }
