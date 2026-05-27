@@ -49,3 +49,28 @@ vim.keymap.set({ "n", "x" }, "grff", vim.lsp.buf.format, { desc = "Format code",
 
 -- UI settings
 vim.keymap.set("n", "<leader>uw", "<cmd>set wrap!<cr>", { desc = "Toggle line wrap", noremap = true })
+
+
+-- Treesitter
+vim.keymap.set({ "x", "o" }, "am", function()
+    require ("nvim-treesitter-textobjects.select").select_textobject("@function.outer", "textobjects")
+end)
+vim.keymap.set({ "x", "o" }, "im", function()
+    require ("nvim-treesitter-textobjects.select").select_textobject("@function.inner", "textobjects")
+end)
+vim.keymap.set({ "x", "o" }, "ac", function()
+    require ("nvim-treesitter-textobjects.select").select_textobject("@class.outer", "textobjects")
+end)
+vim.keymap.set({ "x", "o" }, "ic", function()
+    require ("nvim-treesitter-textobjects.select").select_textobject("@class.inner", "textobjects")
+end)
+vim.keymap.set({ "x", "o" }, "as", function()
+    require ("nvim-treesitter-textobjects.select").select_textobject("@local.scope", "locals")
+end)
+
+vim.keymap.set("n", "<leader>a", function()
+    require("nvim-treesitter-textobjects.swap").swap_next("@parameter.inner")
+end)
+vim.keymap.set("n", "<leader>A", function()
+    require("nvim-treesitter-textobjects.swap").swap_previous("@parameter.outer")
+end)

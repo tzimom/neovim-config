@@ -1,36 +1,34 @@
 return {
-    "nvim-treesitter/nvim-treesitter", branch = "master",
+    {
+        "nvim-treesitter/nvim-treesitter",
 
-    dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
-    event = "VeryLazy",
-    build = ":TSUpdate",
+        lazy = false,
+        build = ":TSUpdate",
 
-    config = function()
-        require("nvim-treesitter.configs").setup({
+
+        opts = {
             auto_install = true,
+        }
+    },
+    {
+        "nvim-treesitter/nvim-treesitter-textobjects", branch = "main",
 
-            highlight = {
-                enable = true,
-                additional_vim_regex_highlighting = false,
-            },
+        init = function()
+            vim.g.no_plugin_maps = true
+        end,
 
-            indent = { enable = true },
+        opts = {
+            select = {
+                lookahead = true,
 
-            textobjects = {
-                select = {
-                    enable = true,
-                    lookahead = true,
-
-                    keymaps = {
-                        ["af"] = { query = "@function.outer", desc = "Select outer part of function" },
-                        ["if"] = { query = "@function.inner", desc = "Select outer part of function" },
-                        ["ac"] = { query = "@class.outer", desc = "Select outer part of class" },
-                        ["ic"] = { query = "@class.inner", desc = "Select inner part of class" },
-                    },
-
-                    include_surrounding_whitespace = false,
+                selection_modes = {
+                    ["@parameter.outer"] = "v",
+                    ["@function.outer"] = "V",
+                    -- ["@class.outer"] = "<c-v>",
                 },
+
+                include_surrounding_whitespace = false,
             },
-        })
-    end
+        },
+    },
 }
