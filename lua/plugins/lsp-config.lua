@@ -27,6 +27,26 @@ return {
         vim.lsp.config("vtsls", {
             filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
             settings = {
+                javascript = {
+                    format = {
+                        semicolons = "remove",
+                        insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces = true,
+                    },
+                    preferences = {
+                        quoteStyle = "single",
+                        jsxAttributeQuoteStyle = "double",
+                    },
+                },
+                typescript = {
+                    format = {
+                        semicolons = "remove",
+                        insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces = true,
+                    },
+                    preferences = {
+                        quoteStyle = "single",
+                        jsxAttributeQuoteStyle = "double",
+                    },
+                },
                 vtsls = {
                     tsserver = {
                         globalPlugins = {
