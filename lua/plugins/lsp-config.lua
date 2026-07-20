@@ -22,7 +22,7 @@ return {
         vim.lsp.enable("sourcekit")
 
         local mason_path = vim.fn.stdpath("data") .. "/mason"
-        local vue_plugin_path = mason_path .. "/packages/vue-language-server/node_modules/@vue/language-server"
+        local vue_language_server_path = mason_path .. "/packages/vue-language-server/node_modules/@vue/language-server"
 
         vim.lsp.config("vtsls", {
             filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
@@ -32,15 +32,25 @@ return {
                         globalPlugins = {
                             {
                                 name = "@vue/typescript-plugin",
-                                location = vue_plugin_path,
+                                location = vue_language_server_path,
                                 languages = { "vue" },
                                 configNamespace = "typescript",
-                                enableForWorkspaceTypeScriptVersions = true,
                             },
                         },
                     },
                 },
             },
+        })
+
+        vim.lsp.config("vue_ls", {
+            cmd = {
+                "vue-language-server",
+                "--stdio",
+                "--tsdk=" .. vim.fn.getcwd() .. "/node_modules/typescript/lib",
+            },
+            init_options = {
+                vue = { hybridMode = true },
+            }
         })
     end,
 }
