@@ -19,8 +19,6 @@ return {
             },
         })
 
-        vim.lsp.enable("sourcekit")
-
         local mason_path = vim.fn.stdpath("data") .. "/mason"
         local vue_language_server_path = mason_path .. "/packages/vue-language-server/node_modules/@vue/language-server"
 
@@ -72,5 +70,7 @@ return {
                 vue = { hybridMode = true },
             }
         })
+
+        vim.lsp.enable("sourcekit")
     end,
 }
