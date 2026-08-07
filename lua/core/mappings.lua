@@ -27,8 +27,6 @@ vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit", noremap = true
 vim.keymap.set("n", "<leader>qw", "<cmd>wqa<cr>", { desc = "Save all and quit", noremap = true })
 vim.keymap.set("n", "<leader>qf", "<cmd>qa!<cr>", { desc = "Force quit", noremap = true })
 
-vim.keymap.set({ "n", "x" }, "grff", vim.lsp.buf.format, { desc = "Format code", noremap = true })
-
 vim.keymap.set("n", "<leader>uw", "<cmd>set wrap!<cr>", { desc = "Toggle line wrap", noremap = true })
 
 vim.keymap.set({ "x", "o" }, "am", function()

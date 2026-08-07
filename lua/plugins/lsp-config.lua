@@ -37,7 +37,7 @@ return {
                 },
                 typescript = {
                     format = {
-                        semicolons = "remove",
+                        semicolons = "insert",
                         insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces = true,
                     },
                     preferences = {
